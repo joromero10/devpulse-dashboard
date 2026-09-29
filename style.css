@@ -1,0 +1,29 @@
+:root {
+  --background-color: ;
+  --background-card: ;
+  --primary-color: ;
+  --primary-hover: ;
+  --primary-text-color: ;
+  --secondary-text-color: ;
+  --border-color: ;
+  --accent-color: ;
+  --transition-speed: ;
+  --font-family: ;
+}
+
+/* Reset the css margins */
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* declare the usage of font family and background color */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-family);
+  background-color: var(--background-card);
+  color: var(--primary-text-color);
+}
+.btn
