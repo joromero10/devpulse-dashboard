@@ -1,14 +1,14 @@
 :root {
   --background-color: #364652;
-  --background-card: ;
-  --primary-color: ;
-  --primary-hover: ;
-  --primary-text-color: ;
-  --secondary-text-color: ;
-  --border-color: ;
-  --accent-color: ;
-  --transition-speed: ;
-  --font-family: ;
+  --background-card: #b5bec6;
+  --primary-color: #bfb1c1;
+  --primary-hover: #edadc7;
+  --primary-text-color: #c7dbe6;
+  --secondary-text-color: #a68ba5;
+  --border-color: #c493b0;
+  --accent-color: #5c5d67;
+  --font-family: BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --transition-speed: 0.2s;
 }
 
 /* Reset the css margins */
@@ -23,7 +23,375 @@
 html {
   scroll-behavior: smooth;
   font-family: var(--font-family);
-  background-color: var(--background-card);
+  background-color: var(--background-color);
   color: var(--primary-text-color);
 }
-.btn
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-speed),
+    transform var(--transition-speed),
+    border-color var(--transition-speed);
+}
+/* button styling */
+
+.btn {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-main);
+  border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-card);
+  border-color: var(--text-muted);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.btn-block {
+  display: flex;
+  width: 100%;
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 1.125rem;
+}
+/* header styling */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  /* rgb colors: 0 - 255; a: 0 - 1 */
+  background-color: rgba(9, 13 25, 0.9);
+  border-bottom: 1px solid var(--border-color);
+}
+.brand-logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  color: var(--primary-color);
+}
+
+.nav-menu {
+  display: flex; /
+  justify-content: algin-item;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: var(--secondary-text-color);
+  text-decoration: none;
+  font-size: 0.95rem;
+  /* declare what wants to animate and then a trigger akawhat is the resulting color */
+  transition: color var(--transition-speed);
+}
+.nav-link:hover {
+  color: var(--primary-text-color);
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  padding: 6rem 1.5rem 4rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.badge-pill {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  padding: 0.35rem 0.85rem;
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+}
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.15;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+}
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  max-width: 700px;
+}
+.cta-group {
+  display: flex;
+  gap: 1rem;
+}
+/* 2 dimensional layout: features section and pricing matrix */
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem, 1.5rem;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.section-subtitle {
+  color: var(--secondary-text-color);
+}
+
+/* features grid  */
+
+.features-grid {
+  /* you can layout this using diaplay flex */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.features-card {
+  background-color: var(--background-card);
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  border-radius: 8px;
+  transition:
+    transform var(--transition-speed),
+    border-color var(--transition-speed);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+.feature-icon {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+.feature-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.deature-desc {
+  color: var(--secondary-text-color);
+  font-size: 0.95rem;
+}
+
+/* pricing matrix */
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, mixmax(280px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.pricing-card {
+  background-color: var(--background-card);
+  border: 1px solid var(--border-color);
+  padding: 2.5rem 2rem;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform var(--transition-speed);
+}
+
+/* affordance - visual weight to the recommended tier */
+.pricing-card.featured {
+  border: 2px solid var(--primary);
+  background-color: rgba(99, 102, 241, 0.04);
+  transform: scale(1.03);
+}
+
+.popular-tag {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.75rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.tier-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.tier-desc {
+  color: var(--secondary-text-color);
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.tier-price {
+  margin-bottom: 1.5rem;
+}
+
+.price-val {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.price-unit {
+  color: var(--secondary-text-color);
+  font-size: 0.9rem;
+}
+
+.tier-features {
+  list-style-type: none;
+  margin-bottom: 2rem;
+  flex-grow: 1; /**pushes the button the bottom evenly*/
+}
+
+.tier-features li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--accent-color);
+  font-size: 0.9rem;
+  color: var(--secondary-text-color);
+}
+
+/* calculator styling */
+
+.form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--background-card);
+  border: 1pc solid var(--border-color);
+  padding: 2.5rem;
+  border-radius: 8px;
+}
+
+/* footer styling */
+
+.lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.required-mark {
+  color: red;
+}
+
+.form-control {
+  background-color: var(--background-color);
+  border: 1px slid var(--border-color);
+  border-radius: 6px;
+  color: var(--primary-text-color);
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  transition: border-color var(--transition-speed);
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+.input-hint {
+  font-size: 0.75rem;
+  color: var(--secondary-text-color);
+}
+
+.site-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 1.5rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--secondary-text-color);
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+.footer-links a {
+  /* right to left */
+  color: var(--secondary-text-color);
+  text-decoration: none;
+}
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-container {
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
