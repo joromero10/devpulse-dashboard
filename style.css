@@ -177,6 +177,8 @@ html {
 /* 2 dimensional layout: features section and pricing matrix */
 .section-container {
   max-width: 1100px;
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
   padding: 4rem, 1.5rem;
 }
@@ -237,7 +239,7 @@ html {
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, mixmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   align-items: stretch;
 }
@@ -253,16 +255,16 @@ html {
   transition: transform var(--transition-speed);
 }
 
-/* affordance - visual weight to the recommended tier */
 .pricing-card-featured {
-  border: 5px solid var(--primary);
+  border: 3px solid yellow;
+  border-radius: 6px;
   background-color: var(--background-card);
   transform: scale(1.03);
 }
 
 .popular-tag {
   position: absolute;
-  top: -12px;
+  top: -30px;
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--primary);
@@ -276,7 +278,7 @@ html {
 
 .tier-name {
   font-size: 1.5rem;
-  color:var(--accent-color);
+  color:var(--primary-color);
   margin-bottom: 0.25rem;
 }
 .feature-tier-name{
@@ -292,36 +294,23 @@ html {
 }
 
 
-.price-val {
-  font-size: 2rem;
-  font-weight: 800;
-}
 
 .price-unit {
   color: var(--secondary-text-color);
   font-size: 0.9rem;
 }
 
-.tier-features {
-  list-style-type: none;
-  margin-bottom: 2rem;
-  flex-grow: 1; /**pushes the button the bottom evenly*/
-}
 
-.tier-features li {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--accent-color);
-  font-size: 0.9rem;
-  color: var(--secondary-text-color);
-}
+
 
 /* calculator styling */
 
 .form-wrapper {
   max-width: 600px;
-  margin: 0 auto;
+  justify-content: space-evenly;
+  margin: 4rem auto;
   background-color: var(--background-card);
-  border: 1pc solid var(--border-color);
+  border: 1rem solid var(--border-color);
   padding: 2.5rem;
   border-radius: 8px;
 }
@@ -342,6 +331,7 @@ html {
 
 .form-label {
   font-size: 0.9rem;
+  color: white;
   font-weight: 600;
 }
 
@@ -351,7 +341,7 @@ html {
 
 .form-control {
   background-color: var(--background-color);
-  border: 1px slid var(--border-color);
+  border: 1px solid var(--border-color);
   border-radius: 6px;
   color: var(--primary-text-color);
   font-size: 1rem;
