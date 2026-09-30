@@ -102,9 +102,24 @@
                 placeholder="someone@gmail.com"
                 required
               />
+            </div>
+            <div class="form-group">
+              <label for="monthly-volume" class="form-label"
+                >Estimated Monthly Volume ($USD)</label
+              >
+
+              <input
+                type="number"
+                name="monthly-volume"
+                id="monthly-volume"
+                class="form-control"
+                min="1000"
+                max="50000000"
+                step="1000"
+                placeholder="50000"
+              />
               <span class="input-hint"> Min: $1,000- Max: $50,00,00 </span>
             </div>
-
             <div class="form-group">
               <label for="business-tier" class="form-label">
                 Target Tier Selection
