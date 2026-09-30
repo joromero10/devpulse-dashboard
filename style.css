@@ -1,12 +1,13 @@
 :root {
-  --background-color: #364652;
-  --background-card: #b5bec6;
-  --primary-color: #bfb1c1;
+  --background-color: #1F2041;
+  --background-card: #ebc7db;
+  --primary-color: #6a516d;
   --primary-hover: #edadc7;
   --primary-text-color: #c7dbe6;
   --secondary-text-color: #a68ba5;
   --border-color: #c493b0;
   --accent-color: #5c5d67;
+  --feature-color: #4B3F72;
   --font-family: BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   --transition-speed: 0.2s;
 }
@@ -186,6 +187,7 @@ html {
 .section-title {
   font-size: 2rem;
   font-weight: 700;
+  color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
 .section-subtitle {
@@ -194,14 +196,15 @@ html {
 
 /* features grid  */
 
-.features-grid {
+.feature-grid {
   /* you can layout this using diaplay flex */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
+  align-items: stretch;
 }
 
-.features-card {
+.feature-card {
   background-color: var(--background-card);
   border: 1px solid var(--border-color);
   padding: 2rem;
@@ -217,13 +220,15 @@ html {
 }
 .feature-icon {
   font-size: 1.75rem;
+  color: var(--feature-color);
   margin-bottom: 1rem;
 }
 .feature-title {
   font-size: 1.25rem;
+  color: var(--feature-color);
   margin-bottom: 0.5rem;
 }
-.deature-desc {
+.feature-desc {
   color: var(--secondary-text-color);
   font-size: 0.95rem;
 }
@@ -249,9 +254,9 @@ html {
 }
 
 /* affordance - visual weight to the recommended tier */
-.pricing-card.featured {
-  border: 2px solid var(--primary);
-  background-color: rgba(99, 102, 241, 0.04);
+.pricing-card-featured {
+  border: 5px solid var(--primary);
+  background-color: var(--background-card);
   transform: scale(1.03);
 }
 
@@ -261,7 +266,7 @@ html {
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--primary);
-  color: #fff;
+  color: yellow;
   font-size: 0.75rem;
   font-weight: 700;
   padding: 0.2rem 0.75rem;
@@ -271,8 +276,14 @@ html {
 
 .tier-name {
   font-size: 1.5rem;
+  color:var(--accent-color);
   margin-bottom: 0.25rem;
 }
+.feature-tier-name{
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
 
 .tier-desc {
   color: var(--secondary-text-color);
@@ -280,9 +291,6 @@ html {
   margin-bottom: 1.5rem;
 }
 
-.tier-price {
-  margin-bottom: 1.5rem;
-}
 
 .price-val {
   font-size: 2rem;
@@ -338,7 +346,7 @@ html {
 }
 
 .required-mark {
-  color: red;
+  color: rgb(79, 14, 14);
 }
 
 .form-control {
